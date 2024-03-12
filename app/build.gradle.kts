@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.firebase.appdistribution")
 }
 
 android {
@@ -32,6 +33,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            firebaseAppDistribution {
+                releaseNotes = "Release notes for demo version"
+            }
         }
     }
     compileOptions {
